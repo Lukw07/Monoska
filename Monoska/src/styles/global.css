@@ -1,0 +1,223 @@
+/* General reset and font import */
+body, html, :root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(145deg, #020617 40%, #117376 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: auto; /* Povolit horizontální posouvání */
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 14px; /* Šířka scrollbaru */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0); /* Barva pozadí tracku */
+   /* Zaoblení rohů tracku */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Barva posuvníku */
+  border-radius: 10px; /* Zaoblení rohů posuvníku */
+  border: 3px solid rgb(20, 181, 149); /* Okraj kolem posuvníku */
+  transition: background-color 2s ease; /* Plynulý přechod při hoveru */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00bfae; /* Změna barvy posuvníku při hoveru */
+}
+
+/* Pro Firefox */
+scrollbar {
+  width: 12px;
+}
+
+scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+scrollbar-thumb {
+  background-color: #117376;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+scrollbar-thumb:hover {
+  background-color: #00bfae;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Zůstat skrytý obsah uvnitř */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: row; /* Zarovnání textu a obrázku vedle sebe */
+  justify-content: space-between; /* Roztažení obsahu na opačné strany */
+  align-items: center; /* Zarovnání na střed vertikálně */
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  position: relative;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* Nastavení velikosti buněk mřížky */
+  overflow-x: hidden; /* Zamezíme horizontálnímu posouvání uvnitř */
+}
+
+/* Text and CTA button */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #117376;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00bfae;
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+/* Optional animation for the hero section */
+.hero-content {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.text-content {
+  max-width: 60%; /* Text bude zabírat polovinu šířky */
+}
+
+.gif-content {
+  max-width: 40%; /* Obrázek zabere druhou polovinu */
+  display: flex;
+  justify-content: flex-end; /* Obrázek zarovnáme doprava */
+}
+
+.gif-content img {
+  max-width: 100%; /* Obrázek přizpůsobíme kontejneru */
+  height: auto; /* Zachování proporcí obrázku */
+  
+}
+
+/* Static Background */
+.hero::before {
+  content: '';
+  position: fixed; /* Pozadí bude fixováno a nebude se pohybovat */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Pozadí pod obsahem */
+}
+
+/* Floating Balls */
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  animation: float 10s ease-in-out infinite;
+} 
+
+.ball-1 {
+  width: 40px;
+  height: 40px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.ball-2 {
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 30%;
+  animation-duration: 14s;
+}
+
+.ball-3 {
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 70%;
+  animation-duration: 16s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-100px) translateX(100px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Menší velikost písma pro malé obrazovky */
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Menší velikost písma pro malé obrazovky */
+  }
+
+  .cta-button {
+    padding: 12px 25px; /* Změněné padding pro malé obrazovky */
+  }
+}

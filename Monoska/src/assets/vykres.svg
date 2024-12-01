@@ -1,0 +1,12 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M10,80 C100,180 200,180 300,80 S500,10 400,80"
+    fill="transparent"
+    stroke="rgba(26, 188, 176, 0.8)"  <!-- Vaše barva -->
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="1000"   <!-- Délka celé čáry -->
+    stroke-dashoffset="1000"  <!-- Počáteční posun čáry -->
+    class="path-animation"
+  />
+</svg>
