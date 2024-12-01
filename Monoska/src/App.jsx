@@ -5,6 +5,7 @@ import SectionGrid from "./Components/SectionGrid";
 import IndustryInfo from "./Components/IndustryInfo";
 import EngineeringInfo from "./Components/EngineeringInfo";
 import Main from "./Components/main";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <SectionGrid />
       <IndustryInfo />
       <EngineeringInfo />
+      <Footer/>
     </div>
   );
 }
